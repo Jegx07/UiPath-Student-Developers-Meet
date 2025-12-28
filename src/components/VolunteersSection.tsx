@@ -5,34 +5,89 @@ import { Heart, ArrowRight, Sparkles } from 'lucide-react';
 
 const volunteers = [
   {
-    name: 'Alex Johnson',
-    role: 'Student Lead',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+    name: 'Shashti Shri',
+    role: 'Student Developer Champion',
+    image: '/Team/Shashti Shri - Student Developer Champion.png',
   },
   {
-    name: 'Maria Garcia',
-    role: 'Tech Support',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
+    name: 'Boomika B',
+    role: 'Vice President',
+    image: '/Team/Boomika B - Vice President.png',
   },
   {
-    name: 'Ryan Chen',
-    role: 'Event Coordinator',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
+    name: 'Akash',
+    role: 'Event Manager',
+    image: '/Team/Akash  - Event Manager.png',
   },
   {
-    name: 'Sophie Williams',
-    role: 'Social Media',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face',
+    name: 'Deepika K',
+    role: 'Event Manager',
+    image: '/Team/Deepika K - Event Manager.png',
   },
   {
-    name: 'David Park',
-    role: 'Registration',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face',
+    name: 'Harini MM',
+    role: 'Secretary',
+    image: '/Team/Harini MM - Secretary.png',
   },
   {
-    name: 'Emma Thompson',
-    role: 'Student Lead',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
+    name: 'Haritha',
+    role: 'Technical Lead',
+    image: '/Team/Haritha - Technical Lead.png',
+  },
+  {
+    name: 'Jegatheesh',
+    role: 'Technical Lead',
+    image: '/Team/Jegatheesh - Technical Lead.png',
+  },
+  {
+    name: 'Karishma',
+    role: 'Content Creator',
+    image: '/Team/Karishma - Content Creator.png',
+  },
+  {
+    name: 'Karthikeyan',
+    role: 'Secretary',
+    image: '/Team/Karthikeyan - Secretary.png',
+  },
+  {
+    name: 'Lena Sri S',
+    role: 'Public Executive Officer',
+    image: '/Team/Lena Sri S - Public Executive Officer.png',
+  },
+  {
+    name: 'Lenin Roy',
+    role: 'Team Member',
+    image: '/Team/Lenin Roy.png',
+  },
+  {
+    name: 'Narmatha',
+    role: 'Secretary',
+    image: '/Team/Narmatha - Secretary.png',
+  },
+  {
+    name: 'Praveena',
+    role: 'Social Media Handler',
+    image: '/Team/Praveena - Social Media Handler.png',
+  },
+  {
+    name: 'Shakthi Pranaash',
+    role: 'Technical Lead',
+    image: '/Team/Shakthi Pranaash -  Technical Lead.png',
+  },
+  {
+    name: 'Yuvaraj',
+    role: 'Graphical Designer',
+    image: '/Team/Yuvaraj - Graphical Designer.png',
+  },
+  {
+    name: '10',
+    role: 'Team Member',
+    image: '/Team/10.png',
+  },
+  {
+    name: '11',
+    role: 'Team Member',
+    image: '/Team/11.png',
   },
 ];
 
