@@ -5,66 +5,90 @@ import { Coffee, Code, Briefcase, Users, Award, Utensils } from 'lucide-react';
 
 const morningSchedule = [
   {
-    time: '9:00 AM',
-    title: 'Registration & Check-in',
-    description: 'Welcome kit distribution and networking',
+    time: '08:30 - 08:45',
+    title: 'Welcome & Kick-off',
+    description: '15 mins - —',
     icon: Users,
   },
   {
-    time: '9:30 AM',
-    title: 'Opening Keynote',
-    description: 'The Future of Automation in Enterprise',
+    time: '08:45 - 09:00',
+    title: 'Keynote Session',
+    description: '15 mins - Keynote Speaker',
     icon: Award,
   },
   {
-    time: '10:30 AM',
-    title: 'Technical Deep Dive',
-    description: 'Building Your First UiPath Automation',
+    time: '09:00 - 10:00',
+    title: 'Meet UiPath: Turning Manual Tasks into Smart Automation',
+    description: '60 mins - Viraj Sir',
     icon: Code,
   },
   {
-    time: '11:30 AM',
-    title: 'Hands-On Workshop',
-    description: 'Interactive coding session with experts',
+    time: '10:00 - 10:30',
+    title: 'Road map to Automation',
+    description: '30 mins - Pugal',
     icon: Code,
   },
   {
-    time: '12:30 PM',
-    title: 'Lunch Break',
-    description: 'Networking lunch and refreshments',
-    icon: Utensils,
+    time: '10:30 - 11:15',
+    title: 'RPA Gateway to Agentic Automation',
+    description: '45 mins - Parvathy Mam',
+    icon: Code,
+  },
+  {
+    time: '11:15 - 11:45',
+    title: 'Champion Session 2',
+    description: '30 mins - Saptak',
+    icon: Award,
+  },
+  {
+    time: '11:45 - 12:15',
+    title: 'Morning Break',
+    description: '30 mins - —',
+    icon: Coffee,
   },
 ];
 
 const afternoonSchedule = [
   {
-    time: '1:30 PM',
-    title: 'Business Track Begins',
-    description: 'Automation as a Business Strategy',
+    time: '12:15 - 13:15',
+    title: 'Speaker Session 3',
+    description: '60 mins - Srenivasan sir',
     icon: Briefcase,
   },
   {
-    time: '2:30 PM',
-    title: 'Panel Discussion',
-    description: 'Career Paths in Automation Industry',
+    time: '01:15 - 01:45',
+    title: 'Champion Session 3',
+    description: '30 mins - Dharshini',
+    icon: Award,
+  },
+  {
+    time: '01:45 - 02:45',
+    title: 'Lunch Break',
+    description: '60 mins - —',
+    icon: Utensils,
+  },
+  {
+    time: '02:45 - 03:30',
+    title: 'UiPath Olympics',
+    description: '45 mins - All',
     icon: Users,
   },
   {
-    time: '3:30 PM',
-    title: 'Coffee Break',
-    description: 'Networking and refreshments',
-    icon: Coffee,
-  },
-  {
-    time: '4:00 PM',
-    title: 'Startup Showcase',
-    description: 'Automation in Real-World Startups',
+    time: '03:30 - 04:15',
+    title: 'Speaker Session 4',
+    description: '45 mins - S4',
     icon: Briefcase,
   },
   {
-    time: '5:00 PM',
-    title: 'Closing Ceremony',
-    description: 'Awards, certificates, and group photo',
+    time: '04:15 - 04:35',
+    title: 'Champion Session 4',
+    description: '30 mins - Srishti',
+    icon: Award,
+  },
+  {
+    time: '04:35 - 05:30',
+    title: 'Felicitation + Closing Remarks + Photo Session',
+    description: '60 mins - —',
     icon: Award,
   },
 ];
@@ -172,7 +196,6 @@ export const ScheduleSection = () => {
                   <h3 className="font-display font-bold text-2xl text-white">
                     Morning Session
                   </h3>
-                  <p className="text-primary text-sm font-medium">Technical Focus</p>
                 </div>
               </motion.div>
               <div>
@@ -203,7 +226,6 @@ export const ScheduleSection = () => {
                   <h3 className="font-display font-bold text-2xl text-white">
                     Afternoon Session
                   </h3>
-                  <p className="text-white/60 text-sm font-medium">Business Focus</p>
                 </div>
               </motion.div>
               <div>
