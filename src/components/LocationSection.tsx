@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Navigation, Car, Train } from 'lucide-react';
+import { MapPin, Navigation, Car, Bus } from 'lucide-react';
 
 export const LocationSection = () => {
   const ref = useRef(null);
@@ -42,10 +42,10 @@ export const LocationSection = () => {
               <div className="aspect-[4/3]">
                 {/* Dark themed Google Map */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977097460944!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1234567890&style=feature:all|element:geometry|color:0x1a1a1a&style=feature:all|element:labels.text.fill|color:0x757575&style=feature:all|element:labels.text.stroke|color:0x212121"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0651889557525!2d77.89805427508364!3d10.416397389711337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1766972119290!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: 'grayscale(100%) invert(92%) contrast(90%)' }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -69,12 +69,12 @@ export const LocationSection = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-sdc-dark mb-2">
-                    Tech Innovation Hub
+                    PSNA College Of Engineering And Technology
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    123 Innovation Drive, Suite 500
+                    Kothandaraman Nagar
                     <br />
-                    San Francisco, CA 94107
+                    Dindigul, Tamil Nadu 624622, India
                   </p>
                   <a
                     href="https://maps.google.com"
@@ -102,18 +102,18 @@ export const LocationSection = () => {
                   <div>
                     <p className="font-semibold text-sdc-dark">By Car</p>
                     <p className="text-sm text-muted-foreground">
-                      Free parking available in the underground garage
+                      Free parking available
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 group">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shrink-0 group-hover:from-primary group-hover:to-primary/80 transition-all">
-                    <Train className="w-6 h-6 text-primary group-hover:text-white transition-colors" strokeWidth={2.5} />
+                    <Bus className="w-6 h-6 text-primary group-hover:text-white transition-colors" strokeWidth={2.5} />
                   </div>
                   <div>
                     <p className="font-semibold text-sdc-dark">By Public Transit</p>
                     <p className="text-sm text-muted-foreground">
-                      5 min walk from Downtown BART station
+                      Reach bus stand before the college, no walking needed
                     </p>
                   </div>
                 </div>
