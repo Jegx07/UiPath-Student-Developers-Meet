@@ -91,7 +91,7 @@ export const HeroSection = () => {
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
-              Student Developer Champion Event
+              UiPath Student Developers Meet
             </span>
           </motion.div>
 
@@ -99,7 +99,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight"
+            className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight"
           >
             <span className="text-white">Student Developers </span>
             <span className="gradient-text-orange">Meet</span>
