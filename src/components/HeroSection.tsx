@@ -91,7 +91,7 @@ export const HeroSection = () => {
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
-              UiPath Student Developer Champion Event
+              Student Developer Champion Event
             </span>
           </motion.div>
 
@@ -101,7 +101,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-display font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight"
           >
-            <span className="text-white">SDC </span>
+            <span className="text-white">Student Developers </span>
             <span className="gradient-text-orange">Meet</span>
           </motion.h1>
 
@@ -124,7 +124,7 @@ export const HeroSection = () => {
           >
             <div className="flex items-center gap-2 text-white/80 glass-card px-4 py-2 rounded-full">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>January 25, 2025</span>
+              <span>14 February 2026</span>
             </div>
             <div className="flex items-center gap-2 text-white/80 glass-card px-4 py-2 rounded-full">
               <Clock className="w-5 h-5 text-primary" />
@@ -132,7 +132,7 @@ export const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2 text-white/80 glass-card px-4 py-2 rounded-full">
               <MapPin className="w-5 h-5 text-primary" />
-              <span>Tech Innovation Hub</span>
+              <span>SRL Auditorium</span>
             </div>
           </motion.div>
 
