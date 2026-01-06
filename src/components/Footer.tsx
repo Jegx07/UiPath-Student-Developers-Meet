@@ -45,7 +45,7 @@ export const Footer = () => {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
-          <p>© 2025 SDC Meet. All rights reserved.</p>
+          <p>© 2025 Student Developers Meet. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-primary transition-colors">
               Privacy Policy
