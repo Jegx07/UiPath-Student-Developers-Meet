@@ -69,7 +69,7 @@ export const LocationSection = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-sdc-dark mb-2">
-                    PSNA College Of Engineering And Technology
+                    SRL Auditorium
                   </h3>
                   <p className="text-muted-foreground mb-4">
                     Kothandaraman Nagar
