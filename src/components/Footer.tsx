@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -24,10 +24,9 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-3">
             {[
-              { icon: Twitter, href: '#' },
               { icon: Linkedin, href: '#' },
-              { icon: Github, href: '#' },
               { icon: Instagram, href: '#' },
+              { icon: Youtube, href: '#' },
             ].map((social, index) => (
               <a
                 key={index}
@@ -37,25 +36,6 @@ export const Footer = () => {
                 <social.icon className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
               </a>
             ))}
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="my-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
-          <p>© 2025 Student Developers Meet. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Code of Conduct
-            </a>
           </div>
         </div>
       </div>

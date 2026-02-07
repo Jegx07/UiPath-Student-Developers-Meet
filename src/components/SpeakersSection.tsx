@@ -1,130 +1,121 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Linkedin, Twitter } from 'lucide-react';
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { Linkedin, X } from "lucide-react";
 
 const speakers = [
   {
-    name: 'Sarah Chen',
-    title: 'Head of Automation',
-    domain: 'UiPath',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
+    name: "Palaniyappan P",
+    session: "Coded Agent with UiPath SDK & LangGraph",
+    role:
+      "4× UiPath MVP | Agentic AI Strategist | Enterprise AI Automation Architect",
+    image: "/Speaker/Palaniyappan P.png",
+    linkedin: "https://www.linkedin.com/in/palaniyappan-p-uipathmvp/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    details: `Get Ready to meet Mr. Palaniyappan P — 4× UiPath MVP and Enterprise AI Automation Architect.
+
+With nearly a decade of experience, he currently architects enterprise AI automation at Novo Nordisk, turning complex business challenges into intelligent, scalable solutions.
+
+Known for his high-energy sessions blending real-world insights with Agentic AI strategies, his mission is simple: make automation smarter, faster, and truly impactful.`,
   },
   {
-    name: 'Michael Roberts',
-    title: 'Senior RPA Developer',
-    domain: 'Tech Innovators Inc.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+    name: "Veeraraj S",
+    session: "Meet UiPath: Turning Manual Tasks into Smart Automation",
+    role:
+      "UiPath Community MVP 2025 | UiPath Advanced RPA Developer (UiARD v1)",
+    image: "/Speaker/Veeraraj S.png",
+    linkedin: "https://www.linkedin.com/in/veeraraj-s-7028b1233/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    details: `Meet Mr. Veeraraj S — UiPath Community MVP 2025 and Certified Advanced RPA Developer.
+
+As a Senior RPA Developer, he delivers enterprise-grade automation solutions using UiPath, Python, Power Automate, and AI-driven workflows.
+
+He focuses on transforming manual tasks into efficient digital processes and simplifying automation adoption for teams.`,
   },
   {
-    name: 'Priya Sharma',
-    title: 'AI/ML Engineer',
-    domain: 'Automation Labs',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'David Kim',
-    title: 'Startup Founder',
-    domain: 'AutoScale Ventures',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Emma Wilson',
-    title: 'Business Strategist',
-    domain: 'Global Consulting',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'James Park',
-    title: 'Developer Advocate',
-    domain: 'UiPath Community',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
+    name: "Srenivasan Kannan",
+    session:
+      "AI Agents in Action: Building Smart Campus Helpdesks & Intelligent Placement Engines",
+    role:
+      "3× UiPath MVP | Agentic AI & Automation Architect | Technical Architect",
+    image: "/Speaker/Srenivasan Kannan.png",
+    linkedin: "https://www.linkedin.com/in/srenivasankannanrpa/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    details: `Meet Mr. Srenivasan Kannan — Agentic AI & Automation Architect with 10+ years of experience.
+
+He serves as a Technical Architect and RPA Practice Lead, designing scalable and secure enterprise automation solutions.
+
+A 3× UiPath MVP and Certified UiPath Trainer, he specializes in Agentic AI, Intelligent Document Processing, workflow orchestration, and AI-powered automation.`,
   },
 ];
 
 export const SpeakersSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true });
+  const [selected, setSelected] = useState<any>(null);
+
+  /* Lock body scroll */
+  useEffect(() => {
+    document.body.style.overflow = selected ? "hidden" : "auto";
+  }, [selected]);
+
+  /* ESC close */
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+
+    if (selected) window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [selected]);
 
   return (
     <section id="speakers" className="py-24 bg-white relative overflow-hidden">
-      {/* Connecting glow line from schedule */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-primary/50 to-transparent" />
-
       <div className="container mx-auto px-6" ref={ref}>
-        {/* Section Header */}
+
+        {/* ===== HEADER ===== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-24"  // 👈 EXTRA SPACE ADDED HERE
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider block mb-6">
             Meet The Experts
           </span>
-          <h2 className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-sdc-dark mb-6">
+
+          <h2 className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-sdc-dark mb-8">
             Our <span className="text-primary">Speakers</span>
           </h2>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Learn from industry leaders and automation experts
+            Learn from industry leaders, automation architects, and AI innovators.
           </p>
         </motion.div>
 
-        {/* Speakers Grid - Layered Premium Cards */}
+        {/* ===== SPEAKER GRID ===== */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`group ${index === 0 || index === 5 ? 'lg:mt-8' : ''}`}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="cursor-pointer"
+              onClick={() => setSelected(speaker)}
             >
-              {/* Premium Layered Card */}
-              <div className="premium-card p-6 pt-16">
-                {/* Geometric pattern on hover */}
-                <div className="geo-pattern top-4 right-4 group-hover:opacity-100" />
-                <div className="geo-pattern bottom-4 left-4 group-hover:opacity-100 rotate-180" />
-
-                {/* Image with "out of bounds" effect */}
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-                  <div className="relative w-28 h-28">
-                    {/* Glow behind image */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-primary/50 blur-xl opacity-0 group-hover:opacity-50 transition-opacity scale-125" />
-                    {/* Image container */}
-                    <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-br from-primary/30 to-white border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500">
-                      <img
-                        src={speaker.image}
-                        alt={speaker.name}
-                        className="w-full h-full rounded-full object-cover"
-                      />
-                    </div>
-                  </div>
+              <div className="premium-card p-6 pt-16 text-center relative">
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-xl"
+                  />
                 </div>
 
-                {/* Info */}
-                <div className="text-center relative z-10 mt-4">
-                  <h3 className="font-display font-bold text-xl text-sdc-dark mb-1 group-hover:text-primary transition-colors">
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-sdc-dark">
                     {speaker.name}
                   </h3>
-                  <p className="text-primary font-medium text-sm mb-1">{speaker.title}</p>
-                  <p className="text-muted-foreground text-sm">{speaker.domain}</p>
-                </div>
-
-                {/* Social Links */}
-                <div className="flex justify-center gap-3 mt-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <a
-                    href="#"
-                    className="w-9 h-9 rounded-lg bg-sdc-dark flex items-center justify-center hover:bg-primary transition-colors"
-                  >
-                    <Linkedin className="w-4 h-4 text-white" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-9 h-9 rounded-lg bg-sdc-dark flex items-center justify-center hover:bg-primary transition-colors"
-                  >
-                    <Twitter className="w-4 h-4 text-white" />
-                  </a>
+                  <p className="text-primary font-medium mt-2 text-sm">
+                    {speaker.session}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -132,12 +123,76 @@ export const SpeakersSection = () => {
         </div>
       </div>
 
-      {/* Circuit line connector */}
-      <div className="absolute bottom-12 left-0 right-0">
-        <div className="container mx-auto px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-        </div>
-      </div>
+      {/* ===== MODAL ===== */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelected(null)}
+          >
+            <motion.div
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-10 md:p-12"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-6 right-6 bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition"
+              >
+                <X className="w-5 h-5 text-sdc-dark" />
+              </button>
+
+              <div className="text-center">
+                <img
+                  src={selected.image}
+                  alt={selected.name}
+                  className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover mx-auto mb-6 shadow-lg"
+                />
+
+                <h2 className="text-3xl font-bold mb-2">
+                  {selected.name}
+                </h2>
+
+                <p className="text-primary font-semibold mb-4">
+                  {selected.session}
+                </p>
+
+                <div className="h-1 w-24 bg-primary mx-auto rounded-full mb-6" />
+
+                <p className="text-sm text-primary mb-6">
+                  {selected.role}
+                </p>
+
+                <div className="max-w-2xl mx-auto text-justify text-muted-foreground leading-relaxed space-y-4">
+                  {selected.details.split("\n\n").map(
+                    (para: string, i: number) => (
+                      <p key={i}>{para}</p>
+                    )
+                  )}
+                </div>
+
+                <div className="flex justify-center mt-10">
+                  <a
+                    href={selected.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary pulse-glow hover:scale-110 transition-transform"
+                  >
+                    <Linkedin className="w-6 h-6 text-white" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

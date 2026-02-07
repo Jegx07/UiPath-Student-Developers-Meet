@@ -132,7 +132,7 @@ export const LocationSection = () => {
                 href="mailto:sdcmeet@uipath.com"
                 className="text-primary hover:underline font-bold text-lg"
               >
-                sdcmeet@uipath.com
+                shasthishree23cb@psnacet.edu.in
               </a>
             </div>
           </motion.div>

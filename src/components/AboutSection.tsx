@@ -1,40 +1,51 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
-import { Users, Rocket, Target, Zap } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { Users, Rocket, Target, Zap } from "lucide-react";
 
 const features = [
   {
     icon: Users,
-    title: 'Community',
-    description: 'Connect with fellow student developers passionate about automation.',
+    title: "Community",
+    description:
+      "Connect with fellow student developers passionate about automation.",
   },
   {
     icon: Rocket,
-    title: 'Innovation',
-    description: 'Learn cutting-edge automation technologies and best practices.',
+    title: "Innovation",
+    description:
+      "Learn cutting-edge automation technologies and best practices.",
   },
   {
     icon: Target,
-    title: 'Career Growth',
-    description: 'Bridge technical skills with real-world business applications.',
+    title: "Career Growth",
+    description:
+      "Bridge technical skills with real-world business applications.",
   },
   {
     icon: Zap,
-    title: 'Hands-On',
-    description: 'Participate in interactive workshops and live demonstrations.',
+    title: "Hands-On",
+    description:
+      "Participate in interactive workshops and live demonstrations.",
   },
 ];
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Expected Attendees' },
-  { value: 6, suffix: '+', label: 'Expert Speakers' },
-  { value: 8, suffix: '+', label: 'Sessions' },
-  { value: 1, suffix: '', label: 'Day of Innovation' },
+  { value: 500, suffix: "+", label: "Expected Attendees" },
+  { value: 6, suffix: "+", label: "Expert Speakers" },
+  { value: 8, suffix: "+", label: "Sessions" },
+  { value: 1, suffix: "", label: "Day of Innovation" },
 ];
 
-// Counter animation component
-const AnimatedCounter = ({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) => {
+const AnimatedCounter = ({
+  value,
+  suffix,
+  isInView,
+}: {
+  value: number;
+  suffix: string;
+  isInView: boolean;
+}) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -59,8 +70,9 @@ const AnimatedCounter = ({ value, suffix, isInView }: { value: number; suffix: s
   }, [isInView, value]);
 
   return (
-    <span className="counter-animate">
-      {count}{suffix}
+    <span>
+      {count}
+      {suffix}
     </span>
   );
 };
@@ -68,29 +80,13 @@ const AnimatedCounter = ({ value, suffix, isInView }: { value: number; suffix: s
 export const AboutSection = () => {
   const ref = useRef(null);
   const statsRef = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const statsInView = useInView(statsRef, { once: true, margin: '-50px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
 
   return (
     <section id="about" className="py-24 bg-white relative overflow-hidden">
-      {/* Background 3D Shape - Faded gear/node */}
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] opacity-[0.03] pointer-events-none">
-        <svg viewBox="0 0 200 200" className="w-full h-full">
-          <path
-            fill="currentColor"
-            className="text-sdc-dark"
-            d="M100,10 L120,40 L160,40 L130,70 L140,110 L100,85 L60,110 L70,70 L40,40 L80,40 Z"
-          />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary" />
-          <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" strokeWidth="1" className="text-sdc-dark" />
-        </svg>
-      </div>
-
-      {/* Subtle accent line connecting from hero */}
-      <div className="absolute top-0 left-1/2 w-px h-20 bg-gradient-to-b from-primary/50 to-transparent" />
-
       <div className="container mx-auto px-6" ref={ref}>
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -100,17 +96,19 @@ export const AboutSection = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             About The Event
           </span>
+
           <h2 className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-sdc-dark mb-6">
-            What is <span className="text-primary">SDC Meet</span>?
+            What is <span className="text-primary">Student Developer Meet</span>?
           </h2>
+
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Student Developers Meet brings together aspiring developers, technical enthusiasts, and business
-            professionals to explore the transformative power of automation. Hosted by UiPath,
-            this event bridges the gap between technical skills and real-world career opportunities.
+            Student Developers Meet brings together aspiring developers,
+            technical enthusiasts, and business professionals to explore the
+            transformative power of automation.
           </p>
         </motion.div>
 
-        {/* Features Grid - Premium Icon Tiles */}
+        {/* Features */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
@@ -118,15 +116,16 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
             >
               <div className="icon-tile h-full">
-                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-primary/30">
+                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
+
                 <h3 className="font-display font-bold text-2xl text-sdc-dark mb-3">
                   {feature.title}
                 </h3>
+
                 <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
@@ -135,7 +134,7 @@ export const AboutSection = () => {
           ))}
         </div>
 
-        {/* Stats with Counter Animation */}
+        {/* Stats */}
         <motion.div
           ref={statsRef}
           initial={{ opacity: 0, y: 20 }}
@@ -152,15 +151,69 @@ export const AboutSection = () => {
               className="text-center"
             >
               <div className="font-display font-black text-5xl md:text-6xl text-primary mb-2">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} isInView={statsInView} />
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  isInView={statsInView}
+                />
               </div>
-              <div className="text-sdc-dark font-medium">{stat.label}</div>
+
+              <div className="text-sdc-dark font-medium">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Hosted & Partnered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-28 text-center mb-32"
+        >
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-12" />
+
+          {/* Hosted */}
+          <h3 className="font-display font-bold text-3xl text-sdc-dark mb-8">
+            Hosted By
+          </h3>
+
+          <div className="flex justify-center mb-24">
+            <div className="border-2 border-primary/20 rounded-2xl px-16 py-12 bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
+              <img
+                src="/club logo.png"
+                alt="Club Logo"
+                className="max-h-28 w-auto object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Partnered */}
+          <h3 className="font-display font-bold text-3xl text-sdc-dark mb-10">
+            Partnered By
+          </h3>
+
+          <div className="flex flex-wrap justify-center items-center gap-16">
+            <div className="border-2 border-primary/20 rounded-2xl px-12 py-10 bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
+              <img
+                src="/PSNA.png"
+                alt="Partner 1"
+                className="max-h-20 w-auto object-contain"
+              />
+            </div>
+
+            <div className="border-2 border-primary/20 rounded-2xl px-12 py-10 bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
+              <img
+                src="/Uipath.png"
+                alt="Partner 2"
+                className="max-h-20 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Feathered gradient transition to dark section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-white to-white" />
     </section>
   );

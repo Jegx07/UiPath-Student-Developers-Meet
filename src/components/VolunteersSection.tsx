@@ -5,7 +5,7 @@ import { Heart, ArrowRight, Sparkles } from 'lucide-react';
 
 const volunteers = [
   {
-    name: 'Shashti Shri',
+    name: 'Shashti Shree',
     role: 'Student Developer Champion',
     image: '/Team/Shashti Shri - Student Developer Champion.png',
     linkedin: 'https://www.linkedin.com/in/shashti-shree-s-29a3ba295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
@@ -97,7 +97,7 @@ const volunteers = [
   {
     name: 'Madhusudhanan',
     role: 'Team Member',
-    image: '/placeholder.svg',
+    image: 'Team/Madhusudhanan - Team Member.png',
     linkedin: 'https://www.linkedin.com/in/madhusudhanan-n-a-972819336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
@@ -249,4 +249,3 @@ export const VolunteersSection = () => {
     </section>
   );
 };
-
