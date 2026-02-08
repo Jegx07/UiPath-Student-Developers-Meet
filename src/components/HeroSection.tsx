@@ -147,13 +147,13 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mb-16"
           >
-            <a
-              href="#register"
+            <Link
+              to="/register"
               className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-primary-foreground font-display font-bold text-lg rounded-full btn-hover glow-orange-sm group"
             >
               Register Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </motion.div>
 
         </div>
