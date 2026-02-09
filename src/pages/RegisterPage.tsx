@@ -14,32 +14,21 @@ declare global {
 const RegisterPage = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [videoCompleted, setVideoCompleted] = useState(false);
+  const [courseCompleted, setCourseCompleted] = useState(false);
   const [formUnlocked, setFormUnlocked] = useState(false);
   const [player, setPlayer] = useState<any>(null);
   const playerRef = useRef<HTMLDivElement>(null);
+  const courseRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
   const steps = [
-    { title: 'Watch UiPath Tutorial', icon: Play },
-    { title: 'Complete Registration Form', icon: Lock },
-    { title: 'Submit Registration', icon: Check },
+    { title: 'Tutorial Video', icon: Play },
+    { title: 'Automation Starter Course', icon: Lock },
+    { title: 'Complete Registration Form', icon: Check },
   ];
 
   useEffect(() => {
     // Load YouTube Iframe API
-    if (!window.YT) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-
-      window.onYouTubeIframeAPIReady = () => {
-        createPlayer();
-      };
-    } else {
-      createPlayer();
-    }
-
     const createPlayer = () => {
       if (playerRef.current && !player) {
         const newPlayer = new window.YT.Player(playerRef.current, {
@@ -57,9 +46,22 @@ const RegisterPage = () => {
     const onPlayerStateChange = (event: any) => {
       if (event.data === window.YT.PlayerState.ENDED) {
         setVideoCompleted(true);
-        unlockForm();
+        unlockCourse();
       }
     };
+
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      window.onYouTubeIframeAPIReady = () => {
+        createPlayer();
+      };
+    } else {
+      createPlayer();
+    }
 
     return () => {
       if (player) {
@@ -70,13 +72,27 @@ const RegisterPage = () => {
 
   const handleSkipTutorial = () => {
     setVideoCompleted(true);
+    unlockCourse();
+  };
+
+  const unlockCourse = () => {
+    setCurrentStep(1);
+    toast.success('Tutorial completed! Automation Starter Course unlocked.');
+    setTimeout(() => {
+      courseRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 500);
+  };
+
+  const handleOpenCourse = () => {
+    window.open('https://academy.uipath.com/learning-plans/rpa-starter', '_blank');
+    setCourseCompleted(true);
     unlockForm();
   };
 
   const unlockForm = () => {
     setFormUnlocked(true);
-    setCurrentStep(1);
-    toast.success('Tutorial completed! Registration form unlocked.');
+    setCurrentStep(2);
+    toast.success('Course opened! Registration form unlocked.');
     setTimeout(() => {
       formRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, 500);
@@ -84,7 +100,6 @@ const RegisterPage = () => {
 
   const handleOpenForm = () => {
     window.open('https://forms.gle/2BCXYkjDzASQrgo69', '_blank');
-    setCurrentStep(2);
     toast.success('Registration form opened! Complete and submit to finish.');
   };
 
@@ -248,8 +263,11 @@ const RegisterPage = () => {
             transition={{ delay: 0.2 }}
           >
             <h2 className="font-display font-bold text-2xl mb-6 text-center">
-              Step 1: Watch UiPath Tutorial
+              Step 1: Tutorial video which helps you to create the UiPath profile
             </h2>
+            <p className="text-white/80 text-center mb-6">
+              Watch this tutorial video to learn how to create your UiPath profile.
+            </p>
             <div className="flex justify-center mb-6">
               <div
                 ref={playerRef}
@@ -265,6 +283,51 @@ const RegisterPage = () => {
                 Skip Tutorial
               </button>
             </div>
+          </motion.div>
+
+          {/* Course Section */}
+          <motion.div
+            ref={courseRef}
+            className="relative glass-card rounded-2xl p-8 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {!videoCompleted && (
+              <div className="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10">
+                <motion.div
+                  className="text-center"
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: 1 }}
+                >
+                  <Lock className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+                  <p className="text-white/80 text-lg">
+                    Complete the tutorial to unlock the Automation Starter Course
+                  </p>
+                </motion.div>
+              </div>
+            )}
+            <h2 className="font-display font-bold text-2xl mb-6 text-center">
+              Step 2: Automation Starter Course
+            </h2>
+            {videoCompleted && (
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <button
+                  onClick={handleOpenCourse}
+                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-xl font-bold text-white transition-all transform hover:scale-105 glow-orange"
+                >
+                  Open UiPath Automation Starter Course
+                </button>
+                <p className="text-white/60 text-sm mt-4">
+                  Click to open the course in a new tab
+                </p>
+              </motion.div>
+            )}
           </motion.div>
 
           {/* Registration Form */}
@@ -284,7 +347,7 @@ const RegisterPage = () => {
                 >
                   <Lock className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                   <p className="text-white/80 text-lg">
-                    Complete the tutorial to unlock the registration form
+                    Complete the course to unlock the registration form
                   </p>
                 </motion.div>
               </div>
