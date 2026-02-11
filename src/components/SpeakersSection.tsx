@@ -4,7 +4,7 @@ import { Linkedin, X } from "lucide-react";
 
 const speakers = [
   {
-    name: "Palaniyappan P",
+    name: "Mr. Palaniyappan P",
     session: "Coded Agent with UiPath SDK & LangGraph",
     role:
       "4× UiPath MVP | Agentic AI Strategist | Enterprise AI Automation Architect",
@@ -17,7 +17,7 @@ With nearly a decade of experience, he currently architects enterprise AI automa
 Known for his high-energy sessions blending real-world insights with Agentic AI strategies, his mission is simple: make automation smarter, faster, and truly impactful.`,
   },
   {
-    name: "Veeraraj S",
+    name: "Mr. Veeraraj S",
     session: "Meet UiPath: Turning Manual Tasks into Smart Automation",
     role:
       "UiPath Community MVP 2025 | UiPath Advanced RPA Developer (UiARD v1)",
@@ -30,7 +30,7 @@ As a Senior RPA Developer, he delivers enterprise-grade automation solutions usi
 He focuses on transforming manual tasks into efficient digital processes and simplifying automation adoption for teams.`,
   },
   {
-    name: "Srenivasan Kannan",
+    name: "Mr. Srenivasan Kannan",
     session:
       "AI Agents in Action: Building Smart Campus Helpdesks & Intelligent Placement Engines",
     role:
