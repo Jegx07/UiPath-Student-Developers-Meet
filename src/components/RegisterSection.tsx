@@ -30,6 +30,10 @@ export default function RegisterPage() {
 
   const registrationFormUrl = "https://forms.gle/SLoSoXYse49Xhqdv5";
 
+  const handleOpenForm = () => {
+    window.location.assign(registrationFormUrl);
+  };
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Glow */}
@@ -182,14 +186,13 @@ export default function RegisterPage() {
                       Complete Registration Form
                     </h2>
 
-                    <a
-                      href={registrationFormUrl}
+                    <button
+                      type="button"
+                      onClick={handleOpenForm}
                       className="inline-flex items-center px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-xl font-bold transition transform hover:scale-105"
-                      target="_self"
-                      rel="noreferrer"
                     >
                       Open Registration Form
-                    </a>
+                    </button>
 
                     <div className="mt-10">
                       <Link to="/">
