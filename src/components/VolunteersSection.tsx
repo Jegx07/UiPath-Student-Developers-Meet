@@ -66,7 +66,7 @@ const volunteers = [
   },
   {
     name: 'Lenin Roy',
-    role: 'Team Member',
+    role: 'Cinematographer',
     image: '/Team/Lenin Roy.png',
     linkedin: 'https://www.linkedin.com/in/lenin-roy-s-a2194132b',
   },
@@ -96,7 +96,7 @@ const volunteers = [
   },
   {
     name: 'Madhusudhanan',
-    role: 'Team Member',
+    role: 'Secretary',
     image: 'Team/Madhusudhanan - Team Member.png',
     linkedin: 'https://www.linkedin.com/in/madhusudhanan-n-a-972819336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },

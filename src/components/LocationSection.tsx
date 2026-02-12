@@ -77,13 +77,13 @@ export const LocationSection = () => {
                     Dindigul, Tamil Nadu 624622, India
                   </p>
                   <a
-                    href="https://maps.google.com"
+                    href="https://www.google.com/maps/dir/?api=1&destination=10.416397389711337,77.89805427508364"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
                   >
                     <Navigation className="w-4 h-4" />
-                    Get Directions
+                    Get Location
                   </a>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export const LocationSection = () => {
                   <div>
                     <p className="font-semibold text-sdc-dark">By Public Transit</p>
                     <p className="text-sm text-muted-foreground">
-                      Reach bus stand before the college, no walking needed
+                      Public Transport Connectivity Available
                     </p>
                   </div>
                 </div>

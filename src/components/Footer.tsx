@@ -14,7 +14,7 @@ export const Footer = () => {
           {/* Logo */}
           <div className="text-center md:text-left">
             <span className="font-display font-bold text-3xl">
-              SDC<span className="text-primary">Meet</span>
+              Student Developers <span className="text-primary">Meet</span>
             </span>
             <p className="text-white/50 text-sm mt-2">
               Hosted by UiPath · Student Developer Champions

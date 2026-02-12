@@ -31,9 +31,9 @@ const features = [
 ];
 
 const stats = [
-  { value: 500, suffix: "+", label: "Expected Attendees" },
-  { value: 6, suffix: "+", label: "Expert Speakers" },
-  { value: 8, suffix: "+", label: "Sessions" },
+  { value: 300, suffix: "+", label: "Expected Attendees" },
+  { value: 5, suffix: "+", label: "Expert Speakers" },
+  { value: 6, suffix: "+", label: "Sessions" },
   { value: 1, suffix: "", label: "Day of Innovation" },
 ];
 

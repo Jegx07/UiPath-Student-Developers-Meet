@@ -57,7 +57,7 @@ export const HeroSection = () => {
 
             <div className="flex items-center gap-2 text-white/80 glass-card px-4 py-2 rounded-full">
               <Clock className="w-5 h-5 text-primary" />
-              <span>9:00 AM - 5:30 PM</span>
+              <span>9:00 AM - 4:30 PM</span>
             </div>
 
             <div className="flex items-center gap-2 text-white/80 glass-card px-4 py-2 rounded-full">

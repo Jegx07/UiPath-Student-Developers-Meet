@@ -55,8 +55,8 @@ const schedule: ScheduleItem[] = [
   },
   {
     time: '12:30 - 01:30',
-    title: 'Ms. Teena Cobb',
-    description: 'Industry Automation Insights',
+    title: 'Speaker 4',
+    description: 'Details Coming Soon',
     icon: Code,
   },
   {
