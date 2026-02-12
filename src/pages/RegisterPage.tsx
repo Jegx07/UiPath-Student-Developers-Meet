@@ -18,6 +18,7 @@ export default function RegisterPage() {
     setVideoCompleted(true);
     setCurrentStep(1);
   };
+  
 
   const handleOpenCourse = () => {
     window.open(
