@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Play, Lock, BookOpen, FileText, SkipForward, Home } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -13,7 +13,6 @@ export default function RegisterPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [videoCompleted, setVideoCompleted] = useState(false);
   const [courseCompleted, setCourseCompleted] = useState(false);
-  const [player, setPlayer] = useState<any>(null);
 
   const handleSkipVideo = () => {
     setVideoCompleted(true);
@@ -31,45 +30,10 @@ export default function RegisterPage() {
 
   const handleOpenForm = () => {
     window.open(
-      "https://forms.gle/M741aXJ9LKLss4AbA",
+      "https://forms.gle/SLoSoXYse49Xhqdv5",
       "_blank"
     );
   };
-
-  useEffect(() => {
-    // Load YouTube Iframe API
-    if (!(window as any).YT) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-    }
-
-    // Initialize player when API is ready
-    (window as any).onYouTubeIframeAPIReady = () => {
-      const newPlayer = new (window as any).YT.Player('youtube-player', {
-        videoId: 'JO8eQPs31Qw',
-        events: {
-          onReady: () => {
-            console.log('YouTube player ready');
-          },
-          onStateChange: (event: any) => {
-            if (event.data === (window as any).YT.PlayerState.ENDED) {
-              setVideoCompleted(true);
-              setCurrentStep(1);
-            }
-          },
-        },
-      });
-      setPlayer(newPlayer);
-    };
-
-    return () => {
-      if (player) {
-        player.destroy();
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -164,9 +128,11 @@ export default function RegisterPage() {
                     </h2>
 
                     <div className="aspect-video bg-black rounded-xl flex items-center justify-center mb-6 border border-white/10">
-                      <div
-                        id="youtube-player"
+                      <iframe
                         className="w-full h-full rounded-xl"
+                        src="https://www.youtube.com/embed/JO8eQPs31Qw"
+                        title="YouTube video"
+                        allowFullScreen
                       />
                     </div>
 
