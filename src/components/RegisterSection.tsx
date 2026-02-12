@@ -28,9 +28,7 @@ export default function RegisterPage() {
     setCurrentStep(2);
   };
 
-  const handleOpenForm = () => {
-    window.location.href = "https://forms.gle/SLoSoXYse49Xhqdv5";
-  };
+  const registrationFormUrl = "https://forms.gle/SLoSoXYse49Xhqdv5";
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -184,12 +182,14 @@ export default function RegisterPage() {
                       Complete Registration Form
                     </h2>
 
-                    <button
-                      onClick={handleOpenForm}
-                      className="px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-xl font-bold transition transform hover:scale-105"
+                    <a
+                      href={registrationFormUrl}
+                      className="inline-flex items-center px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-xl font-bold transition transform hover:scale-105"
+                      target="_self"
+                      rel="noreferrer"
                     >
                       Open Registration Form
-                    </button>
+                    </a>
 
                     <div className="mt-10">
                       <Link to="/">
