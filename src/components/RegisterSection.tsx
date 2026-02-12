@@ -30,7 +30,7 @@ export default function RegisterPage() {
 
   const handleOpenForm = () => {
     window.open(
-      "https://forms.gle/SLoSoXYse49Xhqdv5",
+      "https://forms.gle/ZmGBAc1CYhfXUTh4A",
       "_blank"
     );
   };
