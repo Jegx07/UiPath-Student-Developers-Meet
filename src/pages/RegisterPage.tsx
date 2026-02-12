@@ -28,11 +28,10 @@ export default function RegisterPage() {
     setCurrentStep(2);
   };
 
+  const registrationFormUrl = "https://forms.gle/SLoSoXYse49Xhqdv5";
+
   const handleOpenForm = () => {
-    window.open(
-      "https://forms.gle/2BCXYkjDzASQrgo69",
-      "_blank"
-    );
+    window.location.assign(registrationFormUrl);
   };
 
   return (
@@ -188,8 +187,9 @@ export default function RegisterPage() {
                     </h2>
 
                     <button
+                      type="button"
                       onClick={handleOpenForm}
-                      className="px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-xl font-bold transition transform hover:scale-105"
+                      className="inline-flex items-center px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-xl font-bold transition transform hover:scale-105"
                     >
                       Open Registration Form
                     </button>
